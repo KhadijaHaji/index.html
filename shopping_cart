@@ -1,0 +1,45 @@
+<html>
+   <p>shopping to do list:<p>
+   <ul id="list">
+     <button id="CYF">Buy pink flower</button>
+     <button id="shop">buy yellow flowers</button>
+   </ul>
+
+   <ul id="flowers">
+   </ul>
+
+
+   <p>shopping cart:</p>
+   
+   
+ <script>
+    var check, flowers;
+
+
+
+    document.getElementById('CYF').addEventListener('click', (event) => {
+    event.target.innerText = check;
+
+  });
+
+  document.getElementById('shop').addEventListener('click', (event) => {
+    event.target.innerText = check;
+
+    });
+    check = ['✅'];
+    flowers = ['https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRfvKefHolovt2gLd7rDXFwUm9xxMqbj7r94qBtIaIhmXX59gFzCMYfgcbYACVSsZdsjg9STrlNabgV2SKZzanNVYhVRL3e_m5pNoy3kwGMgJXoVpEq1jFsTQ&usqp=CAc', 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT4KWafYZD2yYXjHqTiB4EKNSzzPDFu0yQbaMxtVbNtqlSu682VDUoyOp4054PxPJ7fyyS5z-mQ8IcDxERBkjsvYTfob_mQxQLj--QAOEH169Ugef-0F6OX&usqp=CAc'];
+    let element_flowers = document.getElementById('flowers');
+    while (!!flowers.length) {
+      if(--window.LoopTrap <= 0) throw "Infinite loop.";
+      let new_img = document.createElement('img');
+      new_img.setAttribute("src", flowers.shift());
+
+      element_flowers.appendChild(new_img);
+      let new_button = document.createElement('button');
+      new_button.innerText = 'add to cart';
+
+      element_flowers.appendChild(new_button);
+    }
+
+ </script>
+</html>
